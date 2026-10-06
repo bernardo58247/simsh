@@ -1,5 +1,5 @@
 require "socket"
-require_relative "../lib_rb/color"
+require_relative "../lib/simsh/color.rb"
 
 VER = 1.0
 $usr = `whoami`.chomp.freeze
