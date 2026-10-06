@@ -1,12 +1,12 @@
 require "socket"
-require_relative "../lib_rb/color"
+require_relative "../lib/simsh/color"
 
 VER = 1.0
 $usr = `whoami`.chomp.freeze
 $hostname = Socket.gethostname.freeze
-def prompt(texto)
-  $prompt = -> { texto }
-end
+$prompt = -> {
+	"#{$usr}@#{$hostname} #{Dir.pwd}"
+}
 $exit_code_enabled = 0
 simshrc = File.join("/etc/", "simshconfig.rb")
 
